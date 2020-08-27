@@ -1,0 +1,58 @@
+package main
+
+import (
+	"fmt"
+	"reflect"
+	"time"
+)
+
+func numbers() {
+	for i := 1; i <= 5; i++ {
+		time.Sleep(250 * time.Millisecond)
+		fmt.Printf("%d ", i)
+	}
+}
+
+func alphabets() {
+	for i := 'a'; i <= 'e'; i++ {
+		time.Sleep(400 * time.Millisecond)
+		fmt.Printf("%c ", i)
+	}
+}
+
+func isNumbers(numbers int, c chan int) {
+	if reflect.TypeOf(numbers).String() == "int" {
+		c <- numbers
+	} else {
+		c <- numbers
+	}
+}
+
+func main() {
+	// human1 := [2]string{"sang", "hoon"}
+	// human2 := [2]string{"Hyun", "Jae"}
+	// go humanName(human1)
+	// humanName(human2)
+
+	// go numbers()
+	// go alphabets()
+	// time.Sleep(3000 * time.Millisecond)
+	// fmt.Println("main terminated")
+
+	// c := make(chan int)
+	// numbers := [4]int{1, 4, 3, 2}
+	// for _, number := range numbers {
+	// 	go isNumbers(number, c)
+	// 	fmt.Println(<-c)
+	// }
+	a := make([]int, 3)
+	fmt.Printf("%p\n", a)
+	fmt.Println(a)
+	s := append(a, 1, 2, 3)
+	fmt.Printf("%p\n", s)
+	fmt.Println(s)
+	p := append(a, 1, 2, 3)
+	fmt.Printf("%p\n", p)
+	fmt.Println(p)
+
+}
