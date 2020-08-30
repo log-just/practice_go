@@ -23,28 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a692cbc-07e1-455d-8abf-bb3dbe0b99a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/system/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/system/health.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/system/notFound.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/logger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/log.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/api/user/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/api/user/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/token.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/route/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/route/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/route/route.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/route/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/error.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/error.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/util/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/util.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/validate.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/validate.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

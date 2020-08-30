@@ -8,8 +8,13 @@ import (
 // validator 인스턴스
 var val = validator.New()
 
-// Validate : REST API 파라미터 검증
-func Validate(c echo.Context, class interface{}) error {
+// Validate : struct 검증
+func Validate(class interface{}) error {
+	return val.Struct(class)
+}
+
+// ValidateReq : REST API 요청 body 검증
+func ValidateReq(c echo.Context, class interface{}) error {
 	if err := c.Bind(class); err != nil {
 		return err
 	}
