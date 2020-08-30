@@ -5,11 +5,14 @@ import (
 	"local/util"
 	"net/http"
 )
+
 // Health health check
 func Health(c echo.Context) error {
-	println("api")
-	if isHealth:= util.Health();isHealth !=true {
-		return c.String(http.StatusInternalServerError, "")
+	var code int
+	if !util.Health() {
+		code = http.StatusInternalServerError
+	} else {
+		code = http.StatusOK
 	}
-	return c.String(http.StatusOK, "")
+	return c.String(code, "")
 }

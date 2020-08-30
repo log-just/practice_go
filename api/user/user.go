@@ -1,13 +1,27 @@
 package user
 
 import (
-	"local/route"
+	"fmt"
+	"local/util"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
 
-// Get : 라우팅 설정!
-func Get(c *echo.Context, p *route.ReqUser) {
+type bodyReq struct {
+	Name int `json:"name" form:"name" query:"name" validate:"required"`
+	Tame int `json:"tame" form:"tame" query:"tame" validate:"required"`
+}
+
+type bodyRes struct {
+	Name string `json:"name" form:"name" query:"name"`
+}
+
+func Test(c echo.Context) error {
+	p := new(bodyReq)
+	if err := util.Validate(c, p); err != nil {
+		return c.JSON(http.StatusBadRequest, util.ErrParamBodyWithVerbose(err))
+	}
+	fmt.Println("okay!")
 	return c.JSON(http.StatusOK, p)
 }
