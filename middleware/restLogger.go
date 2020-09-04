@@ -2,21 +2,23 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/labstack/echo/v4"
+	"local/util"
 	"time"
+
+	"github.com/labstack/echo/v4"
 )
 
 type logRes struct {
-	typ string
+	util.LogTypeMetric
 	req string
 	lat int64
 	res int
 }
 
-// Logger 로깅
-func Logger(next echo.HandlerFunc) echo.HandlerFunc {
+// RestLogger : rest api 로깅
+func RestLogger(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
-		c.Set("t",time.Now())
+		c.Set("t", time.Now())
 
 		err := next(c)
 
@@ -37,10 +39,13 @@ func Logger(next echo.HandlerFunc) echo.HandlerFunc {
 		//})
 
 		fmt.Printf("%+v\n", &logRes{
-			typ: "Mrest",
-			req: fmt.Sprintf("%s %s",req.Method,url),
-			lat: time.Since(startTime).Milliseconds(),
-			res: resCode,
+			util.LogTypeMetric{
+				Typ: "metric",
+				Nam: "rest",
+			},
+			fmt.Sprintf("%s %s", req.Method, url),
+			time.Since(startTime).Milliseconds(),
+			resCode,
 		})
 		return err
 	}

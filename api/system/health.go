@@ -1,9 +1,10 @@
 package system
 
 import (
-	"github.com/labstack/echo/v4"
 	"local/util"
 	"net/http"
+
+	"github.com/labstack/echo/v4"
 )
 
 // Health health check

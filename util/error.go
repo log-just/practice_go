@@ -24,6 +24,7 @@ func ErrParamBody(err error) *ErrResponse {
 	}
 }
 
+// 에러코드들
 const (
-	ErrCodeParam = "PARAM"	// 파라미터 에러
+	ErrCodeParam = "PARAM" // 파라미터 에러
 )

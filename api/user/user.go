@@ -1,7 +1,6 @@
 package user
 
 import (
-	"fmt"
 	"local/util"
 	"net/http"
 
@@ -17,12 +16,11 @@ type bodyRes struct {
 	Name string `json:"name" form:"name" query:"name"`
 }
 
-// path : /user
+// Test : /user
 func Test(c echo.Context) error {
 	p := new(bodyReq)
 	if err := util.ValidateReq(c, p); err != nil {
 		return c.JSON(http.StatusBadRequest, util.ErrParamBodyWithVerbose(err))
 	}
-	fmt.Println("okay!")
 	return c.JSON(http.StatusOK, p)
 }

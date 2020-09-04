@@ -2,13 +2,16 @@ package main
 
 import (
 	"fmt"
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 	apiSystem "local/api/system"
 	apiUser "local/api/user"
 	mw "local/middleware"
 	"local/util"
+	"net/http"
 	"os"
+	"time"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
@@ -23,13 +26,17 @@ func main() {
 	// init web
 	e := echo.New()
 	e.Use(middleware.Recover())
-	e.Use(mw.Logger)
+	e.Use(mw.RestLogger)
 
 	e.GET("/health", apiSystem.Health)
 	e.GET("/user", apiUser.Test)
 
 	//e.Use(mw.LoggerPost)
-	e.Any("/*",apiSystem.NotFound)
+	e.Any("/*", apiSystem.NotFound)
 
-	e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.StartServer(&http.Server{
+		Addr:         ":1323",
+		ReadTimeout:  20 * time.Minute,
+		WriteTimeout: 20 * time.Minute,
+	}))
 }
